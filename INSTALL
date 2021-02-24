@@ -143,8 +143,20 @@ in the top directory of BoxMG.
 
 If your shell is "csh" or "tcsh" use commands such as
 
-   setenv BOXMG_CLEVEL opt
+
+For GNU compilers, set 
+
+   setenv BOXMG_COMPILER gnu
+
+For Intel ifort compiler:
+
    setenv BOXMG_COMPILER intel
+
+The default compile option is 'opt' for performance, or can be set to 'bug' for debugging
+
+If needed, the BOXMG_ARCH can be set to use the appropriate setup in ARCH 
+(or for a user-provided option), e.g.,
+
    setenv BOXMG_ARCH Linux-intel
 
 To make these available in all of your loggin shells put the
@@ -152,9 +164,7 @@ above lines in your .cshrc file.
 
 Similarly for "sh" or "bash" use commands such as 
 
-   export BOXMG_CLEVEL=opt
-   export BOXMG_COMPILER=intel
-   export BOXMG_ARCH=Linux-intel
+   export BOXMG_COMPILER=intel # or gnu for gfortran
 
 
 To make these available in all your loggin shells put the above
@@ -175,7 +185,7 @@ The current list of tested compilers is summarized in this table.
 
   System          COMPILERS         Vendor Information         Binary 
 
-  Linux-Intel       intel         Intel Fortran Compiler 9.0*   ifort
+  Linux-Intel       intel         Intel Fortran Compiler   ifort
                     gnu           GNU (3.x series)              g77
                     gnu           GNU (4.x series)              gfortran
                     absoft (not tested)        Absoft ProFortran 8.2-1       f77
@@ -190,13 +200,7 @@ The version numbers indicate the version of the compiler that is
 installed on our development/testing machines.  It is reasonable to
 expect the code to run with newer versions of the compilers as well.
 
-* Previously, BoxMG was tested with the Intel version 8.x series of
-  compilers, but the name mangling options were improved in the 9.x 
-  series. If you need to run with the older series, you cannot override 
-  the namemangling option with FC_NAME_MANGLE=double.  You may also
-  need to change the warning options regarding line truncation, this
-  is an artifact of having headers that work with both the f77 and f90
-  language specs (continuation character location is different).
+
 ----------------------------
 3.1.1  Float precision:
 ----------------------------
@@ -219,8 +223,7 @@ The library which is created is given the name
 
    libboxmg_$(BOXMG_CLEVEL).a
 
-so you can keep both versions around if you like.  In my opinion,
-this is a very handy feature.
+so you can keep both versions around if you like. 
 
 NB: If you plan on using a vendor optimized version of LAPACK, 
     then refer to Section 4.4 below.
@@ -267,7 +270,8 @@ with the command
 
 (NOTE: There is no 'make install' step, so the libaries are considered to 
 be installed in the 'lib' subdirectory. In other words, the target library
-directory is always './lib')
+directory is always './lib'), and they can be copied by hand to another 
+location. (There is no .la dependence file.)
 
 ----------------
 4.3 TESTING:
@@ -361,11 +365,6 @@ any additional information if you encounter new or related problems.
 
   - The code does not run on a single processor.  If you need this
     feature let us know, this shouldn't be too hard to fix.
-
-  - No testing with less than 4 processors. Processor grids of
-    2x2x1 have been used in the past, I believe they still work.
-    Please report errors or success if you run on other 1 or 2
-    dimensional processor grids (e.g., Nx1x1).
 
   - We need real examples and additional documentation.  For now
     the tests in tests/boxmg-sym-std-3D provide examples for 
