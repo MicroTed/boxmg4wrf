@@ -11,8 +11,7 @@ README                                             boxmg4wrf (2015/04/30)
   problems described in [1], and for symmetric 3D problems described
   in [3].  At this point it does not support the periodic or
   indefinite case, which is discussed in [2], nor does it include
-  plane relaxation. Both of these features will be added in the near
-  future.
+  plane relaxation.
 
       In two dimensions the code is suitable for discretizations of
   elliptic PDEs on a structured (logically rectangular) grids with up
@@ -30,7 +29,7 @@ README                                             boxmg4wrf (2015/04/30)
 
      There should be very little trouble in porting BoxMG to different
   platforms.  The current configuration has been tested on Linux/Intel
-  Linux/Alpha, Tru64(OSF1)/Alpha, and IRIX/R10K.
+  and MacOS/Intel
 
 ----------------------------------------------
  Feedback:
@@ -66,17 +65,10 @@ This version is not actively supported, but you can try sending email to graupel
   (1999-2004) was done by David Moulton, Markus Berndt, Joel Dendy, 
   and Travis Austin.  The code has been used by a growing number of 
   our collaborators, including Scott MacLachlan and Dhavide Aruliah, 
-  who also kindly reported a bug, or three.  We hope more people will 
-  find it useful in the future.  If there are features you need let us 
-  know, it may be possible to add them. 
-
-----------------------------------------------
- NonSymmetric BoxMG:
-----------------------------------------------
-
-  As noted in the README of the serial version, if there is sufficient
-  interest, refactoring a nonsymmetric version of the BoxMG code would
-  be possible.  So feel free to contact us if you would find this useful.
+  who also kindly reported a bug, or three.
+  
+  This release was made by Edward Mansell, who added an ability to compile
+  for either 4-byte or 8-byte reals.
 
 ===============================================================================
 
