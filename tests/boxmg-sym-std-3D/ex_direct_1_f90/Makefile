@@ -90,8 +90,8 @@ endif
 #  Libraries:
 # --------------------
 
-LIBBMG   = boxmg_$(BOXMG_CLEVEL)
-LIBBMGx  = boxmg-extras_$(BOXMG_CLEVEL)
+LIBBMG   = boxmg_$(BOXMG_CLEVEL)_$(BOXMG_libprec)
+LIBBMGx  = boxmg-extras_$(BOXMG_CLEVEL)_$(BOXMG_libprec)
 
 BMGlink  = $(LPOPT)$(BOXMGlibp) $(LLOPT)$(LIBBMG)
 BMGxlink = $(LPOPT)$(EXTRASlibp) $(LLOPT)$(LIBBMGx)
@@ -111,8 +111,6 @@ PUTF = da.o dr.o dz.o putf.o rhs.o
 # ----------------------
 
 OBJS = $(MAIN) $(PUTF)
-#LIBS = $(BMGlink) $(MATHLIBS) $(BMGxlink) $(SYSLIBS)  -L/opt/intel/Compiler/11.0/054/Frameworks/mkl/lib/universal -lmkl_intel_lp64  -lmkl_core
-#LIBS = $(BMGlink) $(MATHLIBS) $(BMGxlink) $(SYSLIBS) -llapack -lblas
 LIBS = $(BMGlink) $(MATHLIBS) $(BMGxlink) $(SYSLIBS)
 
 EXE  = ex_direct_1_f90
