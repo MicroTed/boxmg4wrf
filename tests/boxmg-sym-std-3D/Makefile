@@ -61,10 +61,10 @@ include $(BOXMG_ARCHmake)/ARCH.$(BOXMG_ARCH)
 # -----------------
 
 tests:
-	@( $(CD) ./ex_direct_1; $(MAKE) $(MFLAGS) )
+#	@( $(CD) ./ex_direct_1; $(MAKE) $(MFLAGS) )
 	@( $(CD) ./ex_direct_1_f90; $(MAKE) $(MFLAGS) )
-	@( $(CD) ./ex_direct_pcg; $(MAKE) $(MFLAGS) )
-	@( $(CD) ./ex_direct_pcg_f90; $(MAKE) $(MFLAGS) )
+#	@( $(CD) ./ex_direct_pcg; $(MAKE) $(MFLAGS) )
+#	@( $(CD) ./ex_direct_pcg_f90; $(MAKE) $(MFLAGS) )
 #	@( $(CD) ex_sym_1; $(MAKE) $(MFLAGS) )
 
 clean: banner
