@@ -169,7 +169,7 @@ lib-extras-banner:
 #  Tests
 # -------------------------
 
-check: 
+check: library lib-extras
 	@( $(CD) $(CHECK); $(MAKE) $(MFLAGS) )
 
 check-clean: check-banner
