@@ -187,12 +187,13 @@ The current list of tested compilers is summarized in this table.
 
   Linux-Intel       intel         Intel Fortran Compiler   ifort
                     gnu           GNU (3.x series)              g77
-                    gnu           GNU (4.x series)              gfortran
-                    absoft (not tested)        Absoft ProFortran 8.2-1       f77
+                    gnu           GNU (4.x-10.x series)         gfortran
+                    absoft (not tested) Absoft ProFortran 8.2-1  f77
 
   Linux-AMD         portland      Portland Group Server 5.1-2   pgf77
                     
   OS X              intel         Intel Fortran                 ifort
+                    gnu           GNU (4.x-10.x series)         gfortran
   
   CRAY             Not supported
   
@@ -218,7 +219,7 @@ compilation with the environment variable CLEVEL. For example, use
 
    setenv BOXMG_CLEVEL opt
 
-to select optimized compilation (the other option is "bug" for debugging).
+to select optimized compilation (default; the other option is "bug" for debugging).
 The library which is created is given the name
 
    libboxmg_$(BOXMG_CLEVEL).a
