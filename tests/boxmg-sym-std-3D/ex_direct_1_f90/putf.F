@@ -43,7 +43,7 @@ C ==========================================================================
 C ----------------
 C     Includes
 C
-#include       'BMG_constants.h'
+#include       "BMG_constants_f77.h"
       INCLUDE  'BMG_stencils.h'
       
 C ----------------
@@ -78,7 +78,7 @@ C
 C -----------------
 C     Includes
 C
-#include     'common2.h'
+#include     "common2.h"
 
 C ==========================================================================
 

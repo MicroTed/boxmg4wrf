@@ -46,8 +46,8 @@ include $(BOXMG_ARCHmake)/ARCH.$(BOXMG_ARCH)
 # -----------------
 
 test:  
-#	@( $(MAKE) test-2D $(MFLAGS) )
 	@( $(MAKE) test-3D $(MFLAGS) )
+#	@( $(MAKE) test-2D $(MFLAGS) )
 
 test-2D:
 	@( $(CD) ./boxmg-sym-std-2D; $(MAKE) $(MFLAGS) )

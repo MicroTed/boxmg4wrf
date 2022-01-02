@@ -47,10 +47,10 @@ C -----------------------------
 
       INCLUDE 'mpif.h'
 
-#include      'BMG_constants.h'
+#include      "BMG_constants.h"
       INCLUDE 'BMG_parameters.h'
 
-#include      'common2.h'
+#include      "common2.h"
 
 C ----------------------------
 C     Argument Declarations

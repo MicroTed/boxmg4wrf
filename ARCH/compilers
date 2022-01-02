@@ -116,6 +116,14 @@ ifeq ($(BOXMG_COMPILER),gnu)
     endif
   endif
 
+#  if ( $BOXMG_GNU_FC_MAJOR -gt 9 )
+
+  ifeq ($(shell test $(BOXMG_GNU_FC_MAJOR) -gt 9; echo $$?),0)
+    BOXMG_FC_FLAG= -fallow-argument-mismatch 
+  else
+    BOXMG_FC_FLAG= 
+  endif
+
   # Hack for testing mismatch
   #BOXMG_GNU_CC_VER:=$(shell gcc -v 2>&1 | tail -n 1 | $(VERSION_MAGIC))
   #BOXMG_GNU_CC_MSG:=Cannot find matching version of gcc, using system gcc!
@@ -223,6 +231,14 @@ ifeq ($(BOXMG_COMPILER),g95)
         BOXMG_GNU_CC:=gcc
       endif
     endif
+  endif
+  
+#  if ( $BOXMG_GNU_FC_MAJOR -gt 9 )
+
+  ifeq ($(shell test $(BOXMG_GNU_FC_MAJOR) -gt 9; echo $$?),0)
+    BOXMG_FC_FLAG= -fallow-argument-mismatch 
+  else
+    BOXMG_FC_FLAG= 
   endif
 
   # Hack for testing mismatch

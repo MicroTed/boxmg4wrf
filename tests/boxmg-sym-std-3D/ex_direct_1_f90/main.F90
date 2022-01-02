@@ -82,7 +82,7 @@
       INCLUDE   'BMG_workspace.h'
       INCLUDE   'BMG_parameters.h'
 
-#include        "common2.h"
+#include        "common2_f90.h"
 
 ! ------------------------------------------------
 !      Multigrid/Workspace Memory Allocation: 

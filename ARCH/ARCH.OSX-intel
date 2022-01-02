@@ -892,14 +892,14 @@ ifeq ($(BOXMG_GCC_VER),4)
 
   #  turn off -Wunused-labels for now.
   ifeq ($(BOXMG_CLEVEL),opt)
-    FFLAGS   += $(BOXMG_FINC) -Waliasing -Wsurprising -O3
-    F90FLAGS += $(BOXMG_FINC) -Waliasing -Wsurprising -O3
+    FFLAGS   += $(BOXMG_FINC) -Waliasing -Wsurprising -O3 $(BOXMG_FC_FLAG)
+    F90FLAGS += $(BOXMG_FINC) -Waliasing -Wsurprising -O3 $(BOXMG_FC_FLAG)
     CFLAGS   += $(BOXMG_CINC) -Wall -O3
     CXXFLAGS += $(BOXMG_CINC) -Wall -O3
   else
     # -fbounds-check (hmm?)
-    FFLAGS   += $(BOXMG_FINC) -Waliasing -Wsurprising -gdwarf-2
-    F90FLAGS += $(BOXMG_FINC) -Waliasing -Wsurprising -gdwarf-2
+    FFLAGS   += $(BOXMG_FINC) -Waliasing -Wsurprising -gdwarf-2 $(BOXMG_FC_FLAG)
+    F90FLAGS += $(BOXMG_FINC) -Waliasing -Wsurprising -gdwarf-2 $(BOXMG_FC_FLAG)
     CFLAGS   += $(BOXMG_CINC) -Wall -gdwarf-2
     CXXFLAGS += $(BOXMG_CINC) -Wall -gdwarf-2
   endif
