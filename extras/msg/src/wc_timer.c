@@ -67,6 +67,13 @@
 #define MSG_TSETUP_INT msg_tsetup_int_
 #define MSG_TP_SETUP msg_tp_setup_
 #define MSG_TP_SETUP_INT msg_tp_setup_int_
+extern int msg_tsetup_int_(int *numproc, int *myproc, int *ptrn,
+               int *grid_size,int *proc_size, int *overlap, int *ifp,
+                int *nproc,int *proc,int *ipr,int *index,int *sfa, int *pfa, int *ier,
+                int *gc_ld,int *gc_eid,int *la_size,int *eid_s);
+extern int msg_tp_setup_int_(int *la_size, int *eid_s, int *gc_ld, int *gc_eid,
+                    int *numproc, int *myproc, int *nproc, int *proc, int *ipr, int *index,
+                    int *sfa, int *pfa, int *ier, int *Periodic);
 #else
 #ifdef NO_UNDERSCORE
 #define MSG_TIMER_CLEAR msg_timer_clear
@@ -79,6 +86,13 @@
 #define MSG_TSETUP_INT msg_tsetup_int
 #define MSG_TP_SETUP msg_tp_setup
 #define MSG_TP_SETUP_INT msg_tp_setup_int
+extern int msg_tsetup_int(int *numproc, int *myproc, int *ptrn,
+               int *grid_size,int *proc_size, int *overlap, int *ifp,
+                int *nproc,int *proc,int *ipr,int *index,int *sfa, int *pfa, int *ier,
+                int *gc_ld,int *gc_eid,int *la_size,int *eid_s);
+extern int msg_tp_setup_int(int *la_size, int *eid_s, int *gc_ld, int *gc_eid,
+                    int *numproc, int *myproc, int *nproc, int *proc, int *ipr, int *index,
+                    int *sfa, int *pfa, int *ier, int *Periodic);
 #else
 #define MSG_TIMER_CLEAR msg_timer_clear__
 #define MSG_TIMER_START msg_timer_start__
@@ -90,6 +104,13 @@
 #define MSG_TSETUP_INT msg_tsetup_int__
 #define MSG_TP_SETUP msg_tp_setup__
 #define MSG_TP_SETUP_INT msg_tp_setup_int__
+extern int msg_tsetup_int__(int *numproc, int *myproc, int *ptrn,
+               int *grid_size,int *proc_size, int *overlap, int *ifp,
+                int *nproc,int *proc,int *ipr,int *index,int *sfa, int *pfa, int *ier,
+                int *gc_ld,int *gc_eid,int *la_size,int *eid_s);
+extern int msg_tp_setup_int__(int *la_size, int *eid_s, int *gc_ld, int *gc_eid,
+                    int *numproc, int *myproc, int *nproc, int *proc, int *ipr, int *index,
+                    int *sfa, int *pfa, int *ier, int *Periodic);
 
 #endif
 #endif

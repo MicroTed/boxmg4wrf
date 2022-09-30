@@ -75,6 +75,10 @@ ifeq ($(BOXMG_OS), OSX)
    ifeq ($(findstring 86,$(UNAME_M)),86) 
       BOXMG_CPU = intel
    endif
+   ifeq ($(findstring arm64,$(UNAME_M)),arm64)
+   # for M1 mac, pretend to be intel since gnu compilers are default anyway
+     BOXMG_CPU = intel
+   endif
    endif
 endif
 
