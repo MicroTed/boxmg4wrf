@@ -1,3 +1,9 @@
+#if RKIND == 4
+#define FLOAT_PRECISION MPI_REAL
+#else
+#define FLOAT_PRECISION MPI_DOUBLE_PRECISION
+#endif
+
       SUBROUTINE EX_SETUP_BMG_parms( 
      &              CYCLEFILEi, BMG_iPARMS, BMG_rPARMS, BMG_IOFLAG,
      &              MPI_MyProc, NProc, EX_MPI_COMM, EX_MPI_IERROR
@@ -205,7 +211,7 @@ C -------------------------------------------
       CALL MPI_Bcast( BMG_iPARMS, NBMG_iPARMS, MPI_INTEGER,
      &                0, EX_MPI_COMM, EX_MPI_IERROR )
 
-      CALL MPI_Bcast( BMG_rPARMS, NBMG_rPARMS, MPI_REAL8,
+      CALL MPI_Bcast( BMG_rPARMS, NBMG_rPARMS, FLOAT_PRECISION,
      &                0, EX_MPI_COMM, EX_MPI_IERROR )
 
       CALL MPI_Bcast( BMG_IOFLAG, NBMG_IOFLAG, MPI_LOGICAL,

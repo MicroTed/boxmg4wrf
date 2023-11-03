@@ -1,3 +1,9 @@
+#if RKIND == 4
+#define FLOAT_PRECISION MPI_REAL
+#else
+#define FLOAT_PRECISION MPI_DOUBLE_PRECISION
+#endif
+
       SUBROUTINE EX_SETUP_PDE_parms(
      &                    PDEFILEi, 
      &                    MPI_MyProc, NProc, EX_MPI_COMM, EX_MPI_IERROR
@@ -364,7 +370,7 @@ C ---------------------------------------
 C     Broadcast:
 C ---------------------------------------
 
-      CALL MPI_Bcast( TMP_rBUFFER, NTMP_rBUFFER, MPI_REAL8,
+      CALL MPI_Bcast( TMP_rBUFFER, NTMP_rBUFFER, FLOAT_PRECISION,
      &                0, EX_MPI_COMM, EX_MPI_IERROR )
 
       CALL MPI_Bcast( TMP_iBUFFER, NTMP_iBUFFER, MPI_INTEGER,
