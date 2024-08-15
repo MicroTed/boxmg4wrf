@@ -1163,14 +1163,14 @@ ifeq ($(BOXMG_GCC_VER),4)
     ifndef BOXMG_CXX_OPT
       BOXMG_CXX_OPT = -Wall -O2
     endif
-    FFLAGS   += $(BOXMG_FINC) $(BOXMG_FC_OPT)
-    F90FLAGS += $(BOXMG_FINC) $(BOXMG_F90_OPT)
+    FFLAGS   += $(BOXMG_FINC) $(BOXMG_FC_OPT) $(BOXMG_FC_FLAG)
+    F90FLAGS += $(BOXMG_FINC) $(BOXMG_F90_OPT) $(BOXMG_FC_FLAG)
     CFLAGS   += $(BOXMG_CINC) $(BOXMG_CC_OPT)
     CXXFLAGS += $(BOXMG_CINC) $(BOXMG_CXX_OPT)
   else
     # -fbounds-check (hmm?)
-    FFLAGS   += $(BOXMG_FINC) -Waliasing -Wsurprising -g
-    F90FLAGS += $(BOXMG_FINC) -Waliasing -Wsurprising -g
+    FFLAGS   += $(BOXMG_FINC) -Waliasing -Wsurprising -g $(BOXMG_FC_FLAG)
+    F90FLAGS += $(BOXMG_FINC) -Waliasing -Wsurprising -g $(BOXMG_FC_FLAG)
     CFLAGS   += $(BOXMG_CINC) -Wall -g
     CXXFLAGS += $(BOXMG_CINC) -Wall -g
   endif
