@@ -152,6 +152,10 @@ For Intel ifort compiler:
 
    setenv BOXMG_COMPILER intel
 
+For AMD AOCC compiler (llvm flang/clang):
+
+   setenv BOXMG_COMPILER aocc
+
 The default compile option is 'opt' for performance, or can be set to 'bug' for debugging
 
 If needed, the BOXMG_ARCH can be set to use the appropriate setup in ARCH 
